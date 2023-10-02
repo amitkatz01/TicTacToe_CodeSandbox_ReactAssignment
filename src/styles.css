@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Rubik:500");
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.game-board-container {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,19 @@
+  const hasWon = winningCombinations.some((combination) => {
+    return combination.every((index) => {
+      return props.board[index] === (props.isXTurn ? "X" : "O");
+    });
+  });
+
+  if (winningCombination) {
+    return props.isXTurn ? "X" : "O"; // Return the winning player's symbol
+  }
+
+  // Check for a tie (no empty cells)
+  const isTie = props.board.every((cell) => cell !== "");
+
+  if (isTie) {
+    return "Tie"; // Return "Tie" if it's a tie
+  }
+
+  return false; // If neither win nor tie
+}

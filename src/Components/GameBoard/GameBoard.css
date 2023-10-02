@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css?family=Rubik:500");
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 6.5rem);
+  gap: 0.5rem;
+}
+
+.container,
+.reset-container {
+  display: flex;
+  justify-content: center;
+}
+
+.reset-container {
+  width: 100%;
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+  position: absolute;
+  top: 30vh;
+  background-color: #b4e4dc;
+  z-index: 100;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0.3rem 0.3rem 0.3rem #1f2d32;
+  width: 39%;
+  margin: 0;
+}
+
+.header {
+  background: #359785;
+  padding: 1rem;
+}
+
+.header h2 {
+  margin: 0;
+  color: white;
+}
+
+.actions {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .modal {
+    width: 50%;
+  }
+}
+
+.dismiss {
+  padding: 0.5rem 0.9rem;
+  border-radius: 3px;
+  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+  line-height: 1.25;
+  background: #b0c6ce;
+  text-decoration: none;
+  color: white;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+  transition: background-color 500ms ease;
+  overflow: hidden;
+  margin-top: 1.9rem;
+}
+
+button:focus,
+button:hover {
+  background: darken(#fc6e51, 7%);
+}
+
+button:active {
+  background-color: #82a4b0;
+}
+
+.reset {
+  padding: 1rem 3rem;
+  border-radius: 3px;
+  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+  line-height: 1.25;
+  background: #b0c6ce;
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+  transition: background-color 500ms ease;
+  overflow: hidden;
+  margin-top: 1.9rem;
+}
+button:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  transform-style: flat;
+  transform: translate3d(-50%, -50%, 0);
+  background: rgba(white, 0.1);
+  border-radius: 100%;
+  transition: width 500ms ease, height 500ms ease;
+}
+.reset:active:after {
+  width: 300px;
+  height: 300px;
+}
